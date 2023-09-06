@@ -1,0 +1,41 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": { 
+        "roleDefinitionId": {
+            "type": "String"
+        },
+        "principalId": {
+            "type": "String"
+        },
+        "requestType": {
+            "type": "String"
+        },
+        "name": {
+            "type": "String"
+        },
+        "startDateTime": {
+            "type": "String"
+        }
+    },
+    "outputs": {},
+    "resources": [
+        {
+            "type": "Microsoft.Authorization/roleEligibilityScheduleRequests",
+            "apiVersion": "2020-10-01-preview",
+            "name": "[parameters('name')]",
+            "properties": {
+                "principalId": "[parameters('principalId')]",
+                "roleDefinitionId": "[parameters('roleDefinitionId')]",
+                "requestType": "[parameters('requestType')]",
+                "scheduleInfo": {
+                    "startDateTime": "[parameters('startDateTime')]",
+                    "expiration": {
+                        "type": "AfterDuration",
+                        "duration": "P365D"
+                    }
+                }
+            }
+        }
+    ]
+}
