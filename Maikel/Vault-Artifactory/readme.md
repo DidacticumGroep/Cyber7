@@ -67,7 +67,7 @@ resource roleAssignment 'Microsoft.Authorization/roleAssignments@2020-04-01-prev
 }
 ```
 
-## SOLL-matrix en Single Point of Thought
+## SOLL-matrix en Single Point of Truth
 
 Het is cruciaal om een SOLL-matrix (Should-Objectives-Live-Links) bij te houden van rollen en rechten. Hierin worden de gewenste toegangsrechten van gebruikers gedocumenteerd. Bovendien is het implementeren van een Single Point of Thought binnen IAM van groot belang. Dit zorgt ervoor dat configuraties op één centrale plaats worden beheerd, waardoor misconfiguraties worden geminimaliseerd.
 
